@@ -27,6 +27,9 @@ public class Main {
             }
             String operator = str2[1];
             int result = calc(num1, num2, operator);
+            if (result < 0){
+                throw new ScannerException("В римской системе нет отрицательных чисел");
+            }
             RomNum[] romNum = RomNum.values();
             for (RomNum n: romNum){
                 if (result == n.getValue()){
